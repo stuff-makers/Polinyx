@@ -1,0 +1,9 @@
+
+FriendlyName             
+------------             
+Iriun Webcam             
+Integrated Camera        
+Microphone (Iriun Webcam)
+Iriun Webcam             
+
+
