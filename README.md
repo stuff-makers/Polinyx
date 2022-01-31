@@ -12,7 +12,7 @@ from windows 7 onwards
 # Run application
 1. Clone the project
 ```
-git clone https://github.com/pantheonklub/Polinyx.git
+git clone https://github.com/stuff-makers/Polinyx.git
 ```
 2. Install Required Packages
 ```
