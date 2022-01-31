@@ -21,7 +21,9 @@ pip install -r requirements.txt
 3. Install pyaudio
 ```
 pip install pyaudio
+```
 or
+```
 pipwin install pyaudio
 ```
 4. Build required executables
