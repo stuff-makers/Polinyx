@@ -22,7 +22,7 @@ class Secure:
             hashed_password = bcrypt.hashpw(byte_password, bcrypt.gensalt())
             return hashed_password
         else:
-            return "Password does not meet criteria"
+            return False
 
 # method for checking hashed pw and user entered pw
     def match_password(self, password, password_fetch):

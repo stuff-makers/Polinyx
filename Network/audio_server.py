@@ -6,10 +6,10 @@ import threading
 
 class AudioServer:
 
-    def __init__(self, server_ip, server_port):
+    def __init__(self, server_ip):
 
-        self.server_ip = server_ip
-        self.server_port = server_port
+        self.server_ip = server_ip  # here
+        self.server_port = 8888
 
         self.CHUNK = 1024
         self.WIDTH = 2
@@ -53,13 +53,6 @@ if __name__ == '__main__':
         s.close()
         return ip
 
-    def port():
-        f = open('ports.dat', 'rb')
-        port = pickle.load(f)[1]
-        f.close()
-        return port
-
     ip = local_ip()
-    port = int(port())
-    server = AudioServer(ip, port)
+    server = AudioServer(ip)
     server.receive_audio()

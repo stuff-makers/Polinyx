@@ -28,8 +28,8 @@ pipwin install pyaudio
 ```
 4. Build required executables
 ```
-pyinstaller --onefile -w network/video_server.py
-pyinstaller --onefile -w network/audio_server.py
+pyinstaller --onefile -w --icon=assets/polinyx.ico network/video_server.py
+pyinstaller --onefile -w --icon=assets/polinyx.ico network/audio_server.py
 ```
 >You can delete the .spec files and the build folder.
 

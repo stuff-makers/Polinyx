@@ -13,16 +13,9 @@ def local_ip():
     return ip
 
 
-def port():
-    f = open('ports.dat', 'rb')
-    port = pickle.load(f)[0]
-    f.close()
-    return port
-
-
 ip = local_ip()
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-port = int(port())
+port = 7777  # here
 s.bind((ip, port))
 state = ""
 

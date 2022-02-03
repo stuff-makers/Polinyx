@@ -20,6 +20,7 @@ class User:
         command = f"Select fullname,username,email from UserInfo where auth_token=\'{token}\'"
         cursor.execute(command)
         self.data = cursor.fetchall()
+        db.commit()
         return self.data
 
     # create_account method to be triggered on user clicking the signUp button
@@ -40,15 +41,14 @@ class User:
         command = f"Select password from UserInfo where email=\'{email}\'"
         cursor.execute(command)
         password_fetch = cursor.fetchone()[0]
+        db.commit()
         cred_validity = self.checker.match_password(
             chk_password, password_fetch)
 
         # token and local storage stuff
         token = sec.token_urlsafe()
         user_auth_details += (token,)
-
         pk.dump(user_auth_details, user_file)
-
         user_file.close()
 
         command = f"UPDATE UserInfo SET auth_token=\'{token}\' WHERE email=\'{email}\'"

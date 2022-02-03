@@ -1,15 +1,15 @@
 import pyaudio
 import socket
 import threading
+# from Network.stt import SpeechToText
 
 
 class AudioClient:
 
-    def __init__(self, client_ip, client_port):
+    def __init__(self, client_ip):
 
-        self.client_ip = client_ip
-        self.client_port = client_port
-
+        self.client_ip = client_ip  # here
+        self.client_port = 8888
         self.CHUNK = 1024
         self.WIDTH = 2
         self.CHANNELS = 1
@@ -30,11 +30,14 @@ class AudioClient:
                                   frames_per_buffer=self.CHUNK)
         self.send_state = False
 
+        # self.stt_obj = SpeechToText(self.send_state)
+
     def send_audio(self):
         def thread_send_audio():
             self.s.connect((self.client_ip, self.client_port))
 
             while self.send_state:
+                # self.stt_obj.send_state = self.send_state
                 data_send = self.stream.read(self.CHUNK)
                 self.s.sendto(data_send, (self.client_ip, self.client_port))
             else:
@@ -43,5 +46,5 @@ class AudioClient:
                     self.stream.close()
                     self.p.terminate()
                     print("Exiting")
-        t = threading.Thread(target=thread_send_audio)
+        t = threading.Thread(target=thread_send_audio, daemon=True)
         t.start()

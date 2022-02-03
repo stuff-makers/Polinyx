@@ -8,18 +8,16 @@ import socket
 
 from PIL import Image, ImageTk
 from tkinter import PhotoImage
-import threading
-from multiprocessing import Process
 
 
 class Call:
 
-    def __init__(self, serverip, serverport, camera_opt=0):
+    def __init__(self, serverip, camera_opt=0):
 
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 100000000)
-        self.serverip = serverip
-        self.serverport = serverport
+        self.serverip = serverip  # here
+        self.serverport = 7777
         self.camera_opt = camera_opt
         self.detect_call_state = ""
         self.normal_call_state = ""
@@ -27,7 +25,7 @@ class Call:
 
     def detect_call(self, video_label, video_frame):
 
-        with open('assets\\signs.pkl', 'rb') as model_file:
+        with open('assets\\sign_1_1.pkl', 'rb') as model_file:
             model = pickle.load(model_file)
 
         mp_drawing = mp.solutions.drawing_utils
