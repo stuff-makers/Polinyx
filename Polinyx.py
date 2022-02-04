@@ -390,7 +390,7 @@ class HomeFrame(Frame):
                 else:
                     self.display_data()
             except:
-                self.root.display_mainframe(LoginFrame, HomeFrame)
+                self.logout()
 
     # calling reload function everytime an instance of HomeFrame Object is created to get refresh data
 
