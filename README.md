@@ -45,5 +45,5 @@ or
 pyinstaller -w --collect-all="sklearn" --collect-all="mediapipe" --icon=assets/polinyx.ico Polinyx.py
 ```
 >Copy the UserData, Network, dist and assets folder into the Polinyx folder created in dist. 
->Create a shortcut to the executable or directly run from dist.
+>Create a shortcut to the executable or directly run from dist. 
 
