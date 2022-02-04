@@ -71,7 +71,10 @@ def fetch_user_meeting_id():
     cursor.execute(f"select id from meeting_id where ip=\"{ip}\"")
     id = cursor.fetchone()
     db.commit()
-    return str(id[0])
+    if len(id)==0:
+        create_new_meeting_id()
+    else:    
+        return str(id[0])
 
 
 fetch_user_meeting_id()
