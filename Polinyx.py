@@ -553,6 +553,7 @@ class ChatFrame(Frame):
             self.audio_send_obj.send_state = self.audio_send_btn_state
             self.stt_client_obj.send_state = self.audio_send_btn_state
             self.send_transcribe_label['text'] = "..."
+            self.stt_client_obj.send_state = self.audio_send_btn_state
 
     def exit_call(self):
         self.detect_btn_state = False

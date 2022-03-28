@@ -1,4 +1,3 @@
-
 # Polinyx
 
 A video-chat application created completely using python.
@@ -47,3 +46,6 @@ pyinstaller -w --collect-all="sklearn" --collect-all="mediapipe" --icon=assets/p
 >Copy the UserData, Network, dist and assets folder into the Polinyx folder created in dist. 
 >Create a shortcut to the executable or directly run from dist. 
 
+
+Link to installer
+>https://github.com/stuff-makers/Polinyx/releases
